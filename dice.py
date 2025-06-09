@@ -29,11 +29,15 @@ class Die:
 class Dice():
     # Explicit constructor
     def __init__(self):
-        self.list = []
+        self.__list = []
+
+    @property       # read-only
+    def list(self):
+        return tuple(self.__list)
 
     def addDie(self, die):
-        self.list.append(die)
+        self.__list.append(die)
 
     def rollAll(self):
-        for die in self.list:
+        for die in self.__list:
             die.roll()
