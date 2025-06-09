@@ -9,9 +9,13 @@ class Die:
     __value:int = 1 # If you want this to be private add double underscore to the prefix.
 
     # If the value is between 1 and 6 continue. If not closes the program.
-    def getValue(self):
+    # With the @ symbol you can also set value to a getter or setter
+    @property
+    def value(self):
         return self.__value
-    def setValue(self, value):
+
+    @value.setter
+    def value(self, value):
         if value < 1 or value > 6:
             raise ValueError("Die value must be from 1 to 6.")
         else:
