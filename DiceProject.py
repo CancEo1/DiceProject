@@ -5,7 +5,6 @@
 # roll method set value to random value from 1 to 6
 # addDie method to add a Die object with append() method
 # rollAll() method to roll all of the Die objects. Looping through each die object
-
 from dice import Dice, Die
 
 def main():
@@ -32,7 +31,6 @@ def main():
         for die in dice.list:
             print(die.value, end=" ")
         print("\n")
-
         choice = input("Roll again? (y/n): ")
     print("Goodbye!")
 

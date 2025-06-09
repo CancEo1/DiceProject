@@ -6,7 +6,16 @@ from dataclasses import dataclass
 
 @dataclass
 class Die:
-    value:int = 1 # If you want this to be private add double underscore to the prefix.
+    __value:int = 1 # If you want this to be private add double underscore to the prefix.
+
+    # If the value is between 1 and 6 continue. If not closes the program.
+    def getValue(self):
+        return self.__value
+    def setValue(self, value):
+        if value < 1 or value > 6:
+            raise ValueError("Die value must be from 1 to 6.")
+        else:
+            self.__value = value
 
     def roll(self):
         self.value = random.randrange(1, 7)
